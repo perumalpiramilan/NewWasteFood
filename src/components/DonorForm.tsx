@@ -1,39 +1,105 @@
 import React, { useState } from 'react';
 
-function DonorForm({ onAddFood }) {
-  const [food, setFood] = useState({
-    title: '',
-    quantity: '',
-    location: '',
-    description: '',
-  });
+type FoodItem = {
+  id: number;
+  name: string;
+  title: string;
+  location: string;
+  description: string;
+  timestamp: number;
+};
 
-  const handleChange = (e) => {
-    setFood({ ...food, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = (e) => {
+
+
+
+
+
+
+const DonorForm = ({ onAddFood }: { onAddFood: (foodItem: string) => void }) => {
+  const [name, setFoodItem] = useState('');
+  const [title, setTitle] = useState('');
+  const [location, setLocation] = useState('');
+  const [description, setDescription] = useState('');
+
+  const handleDonate = (e: React.FormEvent) => {
     e.preventDefault();
-    onAddFood(food);
-    setFood({
-      title: '',
-      quantity: '',
-      location: '',
-      description: '',
-    });
+
+
+
+
+    if (!name ||!title || !location || !description ) {
+      alert('Please enter a food item to donate!');
+      return;
+    }
+    const newFood: FoodItem = {
+      id: Date.now(),            // Unique key 1
+      timestamp: Date.now(),     // For sorting 2
+       
+      name,
+      title,
+      location,
+      description,
+    };
+    // Add food to the list (using the passed function)
+    
+    onAddFood(newFood);
+    
+    // Show a donation success alert
+   
+    alert(`${name} has been donated! Thank you!`);
+
+    // Clear the input field after donation
+    setName('');
+    setTitle('');
+    setLocation('');
+    setDescription('');
+
+
   };
 
   return (
-    <form className="donor-form" onSubmit={handleSubmit}>
-      <h2>Donate Food</h2>
-      <input name="title" placeholder="Food Name" value={food.title} onChange={handleChange} required /> 
-      <input name="quantity" placeholder="Quantity" value={food.quantity} onChange={handleChange} required />
-      <input name="location" placeholder="Pickup Location" value={food.location} onChange={handleChange} required />
-      <textarea name="description" placeholder="Description" value={food.description} onChange={handleChange} />
-      <button type="submit">Donate</button>
+    <form className="donor-form" onSubmit={handleDonate}>
+      <input
+        type="text"
+        placeholder="Enter food item to donate"
+        value={name}
+        onChange={(e) => setFoodItem(e.target.value)}
+        required /><br /><br />
+      
+      <input
+        type="quantity"
+        placeholder="Food quantity"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      /><br /><br />
+
+      <input
+        type="text"
+        placeholder="Location"
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        required
+      /><br /><br />
+
+      <textarea
+        placeholder="Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        required
+      /><br /><br />
+      
+      <button type="submit">Donate Food</button>
     </form>
+   
+
+
+
   );
-}
+};
+
+
 
 export default DonorForm;
 

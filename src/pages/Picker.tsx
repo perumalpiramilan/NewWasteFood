@@ -1,13 +1,35 @@
 import React from 'react';
+// import React, { useState } from 'react';
 import FoodList from '../components/FoodList';
 
-function Picker({ foodList }) {
+
+type FoodItem = {
+  id: number;
+  FoodItem: string;
+  title: string;
+  location: string;
+  description: string;
+  timestamp: number;
+  picked?: boolean; // optional, default is false
+};
+
+
+interface PickerProps {
+  foodList: FoodItem[];
+  onPick: (id: number) => void;
+}
+
+function Picker({ foodList, onPick }: PickerProps) {
   return (
     <div className="picker-page">
-      <FoodList foodList={foodList} />
+      <FoodList foodList={foodList} onPick={onPick} />
+
+  
     </div>
   );
 }
+
+
 
 export default Picker;
 

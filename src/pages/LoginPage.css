@@ -1,24 +1,24 @@
 
-* 
-body {
+
+/* body {
     /* height: 100vh; */
-    background:  #74ebd5;
+    /* background:  #74ebd5; */
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center;
     font-family: 'Poppins', sans-serif;
    */
-}
+ 
 
-*{
-    margin: 0;
+
+    /*{ margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
  
   .login-container {
-    background: #359a69;
+    background: #aba8a8;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.2);
@@ -43,13 +43,13 @@ body {
   }
   
   .login-form input:focus {
-    border-color: #74ebd5;
+    border-color: #14071b;
   }
   
   .login-form button {
     width: 100%;
     padding: 12px;
-    background: #74ebd5;
+    background: #151746;
     border: none;
     border-radius: 8px;
     color: white;
@@ -59,7 +59,7 @@ body {
   }
   
   .login-form button:hover {
-    background: #5dc1b9;
+    background: #0c1321;
   }
   
   .links {
@@ -69,11 +69,82 @@ body {
   }
   
   .links a {
-    color: #5dc1b9;
+    color: #2619b9;
     text-decoration: none;
     font-size: 14px;
   }
   
   .links a:hover {
     text-decoration: underline;
+  } */
+
+
+
+
+  .login-container {
+    background-image: url('../assets/image/logbackjpg'); /* Adjust path if needed */
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0rem;
   }
+  
+  .login-form {
+    background-image: url('../assets/image/logbackjpg'); /* Adjust path if needed */
+    background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    background-size: 98% 98%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5rem;
+  }
+  
+  .login-form button {
+    width: 50%;
+    padding: 0.95rem;
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-left:26%;
+    /* margin-right: 15% ; */
+    margin-bottom: 0%;
+  
+  }
+  
+  .login-form button:hover {
+    background-color: #1e40af; /* Tailwind blue-800 */
+  }
+    .links a {
+    color: #2619b9;
+    text-decoration: underline;
+    font-size: 14px;
+
+  }
+   .links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  

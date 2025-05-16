@@ -1,12 +1,14 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  scroll-behavior: smooth;
-  background-color: #f9f9f9;
+.picker-page {
+  padding : 0.5rem 2rem;
+  background: #ffffff;
+  color: rgb(2, 2, 2);
+  text-align: center;
+  
 }
 
+
 .navbar {
-  background: #2d6a4f;
+  background: #b2b8be;
   color: white;
   padding: 1rem;
   display: flex;
@@ -14,20 +16,21 @@ body {
 }
 
 .navbar a {
-  color: white;
+  color: rgb(255, 255, 255);
   margin-left: 1rem;
   text-decoration: none;
 }
 
 .hero {
   padding: 3rem 2rem;
-  background: #74c69d;
+  background: #766e7c;
   color: white;
   text-align: center;
 }
 
 .info-section {
   padding: 1rem;
+  background-color: white;
 }
 
 .donor-form, .food-list {
@@ -35,21 +38,22 @@ body {
   padding: 2rem;
   width: 80%;
   max-width: 900px;
-  background: white;
+  background: rgb(119, 131, 115);
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  
 }
 
 .donor-form input, .donor-form textarea {
   width: 100%;
   padding: 0.75rem;
-  margin: 0.7rem 0;
-  border: 1px solid #ccc;
+  margin: 0.8rem 0;
+  border: 1px solid #feffff;
   border-radius: 5px;
 }
 
 .donor-form button {
-  background: #40916c;
+  background: #27292a;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -65,20 +69,98 @@ body {
 }
 
 .food-card button {
-  background: #52b788;
+  background: #337d58;
   border: none;
   padding: 0.5rem 1rem;
   color: white;
   cursor: pointer;
+  
 }
-/* .login-form{
-  margin: 3rem auto;
-  padding: 5rem;
-  width: 70%;
-  height: 10%;
-  max-width: 800px;
-  background: rgb(46, 128, 99);
-  border-radius: 35px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+ .About {
+  padding : 1rem 4rem;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+ 
 }
- */
+.normal {
+  padding : 2rem 2rem;
+  background: #0e0613;
+  color: white;
+  text-align: center;
+ 
+}
+.aboutpara {
+
+   background: #ffffff;
+  color:#000000 ;
+  padding: 125px;
+  /* margin-left: 50px; */
+  /* margin-right: 250;
+  margin-bottom: 15; */
+  /* margin-top: 20; */
+  /* width: 45%; Takes up 48% of the width to allow some space between sections */
+  /* text-align: left;  */
+
+}
+.contact{
+  padding : 1rem 4rem;
+  background: #afabab;
+  color: #000000;
+  text-align: center;
+}
+.contactdetail{
+
+
+  color: #000000;
+  text-align: center;
+  background: #ffffff;
+}
+
+@keyframes shake-up-down {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-5px); }
+  40% { transform: translateY(5px); }
+  60% { transform: translateY(-5px); }
+  80% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+.shake-up-down {
+  animation: shake-up-down 2.5s infinite;
+}
+
+.donor-page{
+  text-align: center;
+  color: #000000;
+  background: #ffffff;
+}
+
+.food-card.picked {
+  background-color: #f1f1f1;
+  opacity: 0.6;  /* Slightly dim the picked food */
+}
+
+.food-card button {
+  cursor: pointer;
+}
+
+.food-card.picked button {
+  cursor: not-allowed; /* Disable the button when picked */
+}
+.donarsection{
+  padding : 3rem 4rem;
+  background: #262424;
+  color: rgb(243, 243, 243);
+  text-align: center;
+ 
+}
+/* .log{
+  padding : 1rem 4rem;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+} */
