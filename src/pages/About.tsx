@@ -33,23 +33,6 @@ const About: React.FC = () => {
           </h3>
         </p>
       </section>
-
-      <section className="aboutpara">
-        <p>
-          <h3>
-            At <b>Test food management</b>, we believe that no food should go to
-            waste when so many go hungry. Our mission is to bridge the gap
-            between surplus and scarcity by efficiently managing,
-            redistributing, and reducing food waste.
-            <br />
-            <hr />
-            We are a team of passionate individuals committed to addressing the
-            issue of food waste in Srilanka. Our goal is to create a system that
-            connects food donors with charities and NGOs, while also reducing
-            the environmental impact of food waste.
-          </h3>
-        </p>
-      </section>
     </div>
   );
 };
