@@ -82,12 +82,13 @@
 
 
   .login-container {
-    background-image: url('../assets/image/logbackjpg'); /* Adjust path if needed */
+    background-image: url('../assets/image/logfjpeg'); /* Adjust path if needed */
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-  
-    min-height: 80vh;
+    background-color: rgb(100 136 172);
+
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,16 +97,17 @@
   }
   
   .login-form {
-    background-image: url('../assets/image/logbackjpg'); /* Adjust path if needed */
+    background-image: url('../assets/image/one.pn'); /* Adjust path if needed */
     background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
     padding: 3rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     background-size: 98% 98%;
     background-position: center;
     background-repeat: no-repeat;
+    font-style: sans-serif;
   }
   
   .login-form input {
@@ -129,6 +131,7 @@
     margin-left:26%;
     /* margin-right: 15% ; */
     margin-bottom: 0%;
+    font-style: sans-serif;
   
   }
   
@@ -138,13 +141,20 @@
     .links a {
     color: #2619b9;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 15px;
+    font-style: calc(sans-serif);
 
   }
    .links {
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
+  }
+  .register {
+ 
+    text-decoration: underline;
+    font-size: 16px;
+    font-style: calc(sans-serif);
   }
   
   

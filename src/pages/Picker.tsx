@@ -21,17 +21,27 @@ interface PickerProps {
 
 function Picker({ foodList, onPick }: PickerProps) {
   return (
-    <div className="picker-page">
-      <FoodList foodList={foodList} onPick={onPick} />
+    // <div className="picker-page">
+    //   <FoodList foodList={foodList} onPick={onPick} />
+    //   </div>
 
-  
-    </div>
+
+
+
+
+<div className="picker-page ">
+  <div className="food-grid">
+    <FoodList foodList={foodList} onPick={onPick} />
+  </div>
+</div>
+
+
+
+
   );
 }
 
 
 
 export default Picker;
-
-
 

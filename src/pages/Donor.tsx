@@ -1,15 +1,23 @@
  import React from 'react';
 import DonorForm from '../components/DonorForm';
 import { useAuth } from '../context/AuthContext';
+import api from '../api';
 
 
-// function Donor({ addFood }) {
-//   return (
-//     <div className="donor-page">
-//       <DonorForm onAddFood={addFood}/>
-//     </div>
-//   );
-// }
+
+
+async function fetchFoodList() {
+  try {
+    const response = await api.get('/food'); // /food is protected backend route
+    return response.data; // your food items
+  } catch (error) {
+    console.error('Fetch food failed:', error);
+    return null;
+  }
+}
+
+
+
   
 type FoodItem = {
   id: number;
@@ -24,7 +32,7 @@ const Donor = ({ addFood }: { addFood: (item:FoodItem) => void }) => {
   const { user } = useAuth();  // Get the logged-in user
 
   return (
-    <div className="donor-page" ><br /><br />
+    <div className="donor-page" ><br /><br /><br /><br />
       <h2>Welcome {user?.name} - Donor Page</h2>
       {/* Passing the onAddFood function to DonorForm */}
       <DonorForm onAddFood={addFood} />
@@ -40,14 +48,7 @@ const Donor = ({ addFood }: { addFood: (item:FoodItem) => void }) => {
   );
 };
 
-
-
-
-
-
-
-
-
 export default Donor;
+
 
 

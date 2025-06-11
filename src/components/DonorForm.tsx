@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import '../App.css'; // optional for extra styling if needed
+import image from "../assets/image/donation2.png"
+
+
 
 type FoodItem = {
   id: number;
@@ -9,15 +13,12 @@ type FoodItem = {
   timestamp: number;
 };
 
+interface DonorFormProps {
+  onAddFood: (foodItem: FoodItem) => void;
+}
 
-
-
-
-
-
-
-const DonorForm = ({ onAddFood }: { onAddFood: (foodItem: string) => void }) => {
-  const [name, setFoodItem] = useState('');
+const DonorForm: React.FC<DonorFormProps> = ({ onAddFood }) => {
+  const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [location, setLocation] = useState('');
   const [description, setDescription] = useState('');
@@ -25,81 +26,108 @@ const DonorForm = ({ onAddFood }: { onAddFood: (foodItem: string) => void }) => 
   const handleDonate = (e: React.FormEvent) => {
     e.preventDefault();
 
-
-
-
-    if (!name ||!title || !location || !description ) {
-      alert('Please enter a food item to donate!');
+    if (!name || !title || !location || !description) {
+      alert('Please fill out all fields before donating.');
       return;
     }
+
     const newFood: FoodItem = {
-      id: Date.now(),            // Unique key 1
-      timestamp: Date.now(),     // For sorting 2
-       
+      id: Date.now(),
       name,
       title,
       location,
       description,
+      timestamp: Date.now(),
     };
-    // Add food to the list (using the passed function)
-    
+
     onAddFood(newFood);
-    
-    // Show a donation success alert
-   
+
     alert(`${name} has been donated! Thank you!`);
 
-    // Clear the input field after donation
+    // Reset form
     setName('');
     setTitle('');
     setLocation('');
     setDescription('');
-
-
   };
 
   return (
-    <form className="donor-form" onSubmit={handleDonate}>
-      <input
-        type="text"
-        placeholder="Enter food item to donate"
-        value={name}
-        onChange={(e) => setFoodItem(e.target.value)}
-        required /><br /><br />
-      
-      <input
-        type="quantity"
-        placeholder="Food quantity"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      /><br /><br />
+    <div className="container my-5">
+      <div className="row align-items-center">
+        {/* Image or Illustration */}
+        <div className="col-md-6 mb-4 mb-md-0">
+          <img
+            src={image} // Replace with your actual image path
+            alt="Food donation illustration"
+            className="img-fluid rounded shadow"
+          />
+        </div>
 
-      <input
-        type="text"
-        placeholder="Location"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        required
-      /><br /><br />
+        {/* Form */}
+        <div className="col-md-6">
+          <form className="p-4 bg-light rounded shadow" onSubmit={handleDonate}>
+            <h3 className="mb-4 text-center">Donate Food</h3>
 
-      <textarea
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      /><br /><br />
-      
-      <button type="submit">Donate Food</button>
-    </form>
-   
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">Food Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                placeholder="Enter food name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
 
+            <div className="mb-3">
+              <label htmlFor="title" className="form-label">Quantity</label>
+              <input
+                type="text"
+                className="form-control"
+                id="title"
+                placeholder="e.g., 5 packs, 2 trays"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </div>
 
+            <div className="mb-3">
+              <label htmlFor="location" className="form-label">Location</label>
+              <input
+                type="text"
+                className="form-control"
+                id="location"
+                placeholder="Enter pickup location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                required
+              />
+            </div>
 
+            <div className="mb-3">
+              <label htmlFor="description" className="form-label">Description</label>
+              <textarea
+                className="form-control"
+                id="description"
+                rows={3}
+                placeholder="Any special notes, expiry, etc."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="d-grid">
+              <button type="submit" className="btn btn-success">Donate Food</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 
-
-
 export default DonorForm;
-

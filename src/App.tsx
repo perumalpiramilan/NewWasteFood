@@ -9,6 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRouts';
+import Register from './pages/Register';
 
 
 
@@ -93,6 +94,7 @@ function App() {
         
         <Route path="/About" element={<About/>} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   </AuthProvider>

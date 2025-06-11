@@ -1,11 +1,15 @@
+
+
+
+
 .picker-page {
   padding : 0.5rem 2rem;
-  background: #ffffff;
+  background: rgb(95, 90, 89);
   color: rgb(2, 2, 2);
   text-align: center;
   
 }
-
+/* 
 
 .navbar {
   background: #b2b8be;
@@ -13,13 +17,20 @@
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  padding-bottom : 20px;
+  width: 100%;
+  margin-bottom: 30px   ;
+   
 }
 
 .navbar a {
-  color: rgb(255, 255, 255);
+  color: rgb(249, 249, 249);
   margin-left: 1rem;
+ 
   text-decoration: none;
-}
+   text-align: center;
+} */
 
 .hero {
   padding: 3rem 2rem;
@@ -136,7 +147,7 @@
 .donor-page{
   text-align: center;
   color: #000000;
-  background: #ffffff;
+  background: rgb(100 136 172)
 }
 
 .food-card.picked {
@@ -164,3 +175,78 @@
   color: rgb(0, 0, 0);
   text-align: center;
 } */
+
+.foodphoto {
+
+   
+
+   background-image: url('../assets/image/login.jpg');
+   background-size: 100% 100%;
+   background-position: center;
+    background-repeat: no-repeat;
+    background-color: #4d504f;
+
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0rem;
+
+}
+
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+
+ 
+
+
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+
+min-height: 10vh;
+
+}
+.IMG{
+padding-top:70px ;
+  width: 40%;
+  height: 50%;
+}
+.bg-setC{
+
+  background-color: rgb(100 136 172) ;
+}
+.HEa{
+  color: #000;
+}
+/* Your custom override */
+a,
+a:hover,
+a:focus {
+  color: white !important;
+  text-decoration: none !important;
+  padding-left:7px;
+  font-size: 16px;
+}
+
+.about-page {
+  background-color: rgb(242, 176, 166);  
+}
+
+
+
+.picker-page {
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}

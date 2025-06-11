@@ -5,12 +5,10 @@ import App from './App.tsx'
 import { AuthProvider } from './context/AuthContext';
 import ReactDOM from 'react-dom/client';
 import React from 'react';
+import './index.css'
+ 
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+ 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <AuthProvider>         {/* ✅ Make sure this wraps <App /> */}

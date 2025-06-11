@@ -56,6 +56,22 @@
 
 
 // components/MovingImageSlider.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useEffect, useRef } from "react";
 
 const images = [
@@ -105,4 +121,4 @@ const MovingImageSlider: React.FC = () => {
   );
 };
 
-export default MovingImageSlider;
+// export default MovingImageSlider;
